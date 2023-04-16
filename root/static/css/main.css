@@ -1,0 +1,458 @@
+/* Стили тегов */
+*{
+    font-family: 'Roboto';
+}
+
+
+/* Основные Стили */
+.container{
+    margin: 30px;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Скрол бар */
+:root {
+    --scroll-bar-color: #b0b0b0;
+    --scroll-thumb-color: #8f8f8f;
+    --text-color-light: #829aa5;
+}
+::-webkit-scrollbar{
+    width: .50rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: .6rem;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-thumb-color);
+    border-radius: .6rem;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--text-color-light);
+}
+
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-box-shadow: inset 0 0 0 50px black;
+    box-shadow: inset 0 0 0 50px black;
+    -webkit-text-fill-color: #FE8F1D;
+    font-size: 30px;
+}
+
+
+
+/* Шапка */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #208ED8;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.header__logo{
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.logo__text{
+    color: white;
+    text-decoration: none;
+}
+.header__tools{
+    display: flex;
+    gap: 30px;
+}
+.tools__link{
+    font-size: 24px;
+    color: white;
+}
+.tools__link:hover{
+    color: #5CCAFF;
+}
+
+
+/* Сайтбар */
+.sedebarMain__container{
+    display: flex;
+    margin-top: 50px;
+}
+.sidebar{
+    position: fixed;
+    top: 50;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #fafafa;
+    box-shadow: inset 0px 6px 5px #d1d1d1;
+}
+
+.sidebar__list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sidebar__item{
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    color: #208ED8;
+    display: flex;
+    align-items: center;
+}
+.sidebar__item_element{
+    position: relative;
+    margin: 15px 0px 0px 40px;
+    font-size: 20px;
+    color: #208ED8;
+}
+.sidebar__item_element:hover{
+    opacity: 0.5;
+}
+.sidebar__item:hover, .sidebar__item-active{
+    background-color: #208ED8;
+    color: white;
+    border-radius: 10px;
+}
+.sidebar__details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bi-caret-down-fill{
+    transition: all 0.3s ease;
+}
+.sidebar__details[open]{
+    box-shadow: inset 0px 0px 5px #cecece;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+.sidebar__details[open] .bi-caret-down-fill{
+    transform: rotate(-180deg);
+}
+
+
+/* Hujjatlar */
+.main{
+    margin-left: 300px;
+    z-index: 1;
+    background-color: white;
+}
+.breadcrumbs{
+    margin-bottom: 30px;
+}
+.breadcrumbs__item{
+    color: rgb(180, 180, 180);
+}
+.breadcrumbs__item-active, .breadcrumbs__item:hover{
+    color: #e2e2e2;
+}
+.main__subtitle{
+    margin-bottom: 10px;
+    color: rgb(180, 180, 180);
+}
+.folder__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+.folder__item{
+    position: relative;
+}
+.folder__link{
+    padding: 15px;
+    box-shadow: 0px 0px 0px #fafafa;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    width: 333px;
+    color: rgb(60,64,67);
+    display: flex;
+    gap: 10px;
+}
+.folder__link:hover{
+    background-color: #f3f3f3;
+}
+.folder__link i{
+    font-size: 18px;
+}
+.folder__name{
+    height: 20px;
+    overflow: hidden;
+}
+.pdf__icon{
+    color: #D90718;
+}
+.word__icon{
+    color: #0A51D1;
+}
+.excel__icon{
+    color: #26A639;
+}
+.folder__delete{
+    color: #e2e2e2;
+    position: absolute;
+    transform:translate(-50%, -50%);
+    top:50%;
+    right: 0px;
+    font-size: 18px;
+    z-index: 1;
+}
+.folder__delete:hover{
+    color: #D90718;
+}
+
+
+/* Видео курсы */
+.courses__list{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.courses__item{
+    width: 300px;
+}
+.header__title{
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+.courses__image{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 5px #C4C4C6;
+    transition: all 0.3s ease;
+}
+.courses__image:hover{
+    box-shadow: 0px 0px 15px rgb(139, 139, 139);
+}
+.courses__type{
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #C4C4C6;
+}
+.courses__title{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    color: #2A2A2C;
+}
+.courses__title:hover{
+    color: #208ED8;
+}
+
+
+/* Страница Экспорта */
+.excel__container{
+    width: 100%;
+    height: 100vh;
+}
+.excel__container iframe{
+    width: 100%;
+    height: 95%;
+}
+
+
+/* Страница Reals */
+.reals__item iframe{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.reals__title{
+    font-size: 16px;
+    color: #2A2A2C;
+}
+
+
+
+
+
+
+
+
+/* Стили Попапов */
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+    z-index: 99;
+}
+.popup.open{
+    visibility: visible;
+    opacity: 1;
+}
+.popup.open .popup__content{
+    visibility: visible;
+    opacity: 1;
+}
+.popup__body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+}
+.popup__content{
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    display: grid;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    opacity: 0;
+}
+.popup-create-folder__content{
+    min-width: 500px;
+}
+.popup_close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: #F25D30;
+}
+.popup_close:hover{
+    background-color: #e63d0a;
+}
+.popup__title{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 24px;
+}
+.popup__input{
+    min-width: 400px;
+    height: 50px;
+    box-shadow: inset 0px 0px 8px #C1C1C1;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+.popup__input:focus{
+    box-shadow: inset 0px 0px 8px #0098FF;
+    color: #004879;
+}
+.popup__button{
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #0098FF;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    min-width: 100%;
+}
+.popup__button:hover{
+    background-color: #007acc;
+}
+.select__title{
+    margin-left: 0px;
+}
+.popup__form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* страница в разработке */
+.main__creating{
+    width: 100%;
+}
+.creating__container{
+    height: 100vh;
+    margin-top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeef0;
+    margin: 0px;
+    padding: 30px;
+}
+.loader{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader span{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-color: #eaeef0;
+    border: 6px solid #eaeef0;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 1), 8px 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.loader span::before{
+    content: '';
+    position: absolute;
+    inset: 40px;
+    background-color: #eaeef0;
+    border-radius: 50%;
+    box-shadow: -8px -8px 25px rgba(255, 255, 255, 1), 8px 8px 25px rgba(0, 0, 0, 0.15), inset 3px 3px 10px rgba(0, 0, 0, 0.1), inset -1px -1px 15px rgba(255, 255, 255, 1);
+    border: 2px solid #eaeef0;
+    z-index: 1;
+}
+.loader span i{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#42abff, #ff4f8b, #ffeb3b );
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: creating 3s linear infinite;
+}
+@keyframes creating{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.loader__text{
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    animation: creating 20s linear infinite;
+}
+.loader__text b{
+    position: absolute;
+    left: 50%;
+    top: 1%;
+    display: block;
+    transform-origin: 0 170px;
+    font-weight: normal;
+    font-size: 1.4em;
+}
