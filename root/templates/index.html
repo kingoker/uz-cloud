@@ -1,5 +1,4 @@
 {% load static %}
-{% load breadcrumbs_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,17 +75,32 @@
                 </h2>
                 <div class="folder__list">
                     {% for folder in folders %}
-                    <div class="folder__item">
-                        <a href="#" class="folder__link" title="{{ folder.name }}">
-                            <i class="bi bi-folder-fill"></i>
-                            <p class="folder__name">{{ folder.name }}</p>
-                        </a>
-                        <a href="#" class="folder__delete">
-                            <i class="bi bi-trash3-fill"></i>
-                        </a>
-                    </div>
+                        <div class="folder__item">
+                            <a href="{% url 'folder_view' folder_id=folder.id %}" class="folder__link" title="{{ folder.name }}">
+                                <i class="bi bi-folder-fill"></i>
+                                <p class="folder__name">{{ folder.name }}</p>
+                            </a>
+                            <a href="#" class="folder__delete">
+                                <i class="bi bi-trash3-fill"></i>
+                            </a>
+                        </div>
                     {% endfor %}
+
+                    {% if subfolders %}
+                        {% for folder in subfolders %}
+                            <div class="folder__item">
+                                <a href="{% url 'folder_view' folder_id=folder.id %}" class="folder__link" title="{{ folder.name }}">
+                                    <i class="bi bi-folder-fill"></i>
+                                    <p class="folder__name">{{ folder.name }}</p>
+                                </a>
+                                <a href="#" class="folder__delete">
+                                    <i class="bi bi-trash3-fill"></i>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
+                
 
                 <h2 class="main__subtitle">
                     файлы
@@ -131,15 +145,17 @@
                     <div class="popup_close close__popup"></div>
                 </a>
                 <div class="popup__title">Создать папку</div>
-                <form method="POST" class="form popup__form">
-                    <input type="text" class="popup__input" placeholder="Название папки" required>
+                <form method="POST" class="form popup__form" name="folder-create">
+                    {% csrf_token %}
+                    {{ folderForm }}
+                    {% comment %} <input type="text" class="popup__input" placeholder="Название папки" required> {% endcomment %}
                     <button class="popup__button button">Создать папку</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <div id="upload__file" class="popup-upload-file popup">
+    <div id="upload__file" class="popup-upload-file popup" name="file-upload">
         <div class="popup-create-folder__body popup__body">
             <div class="popup-create-folder__content popup__content">
                 <a href="#">
@@ -147,14 +163,16 @@
                 </a>
                 <div class="popup__title">Загрузить документ</div>
                 <form method="POST"  class="form popup__form" enctype="multipart/form-data">
-                    <input type="file" class="popup__input" placeholder="Название папки" required>
+                    {% csrf_token %}
+                    {{ fileForm }}
+                    {% comment %} <input type="file" class="popup__input" placeholder="Название папки" required> {% endcomment %}
                     <button type="submit" class="popup__button button">Загрузить</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <div id="login" class="popup-create-folder popup">
+    <div id="login" class="popup-create-folder popup" name="autorization">
         <div class="popup-create-folder__body popup__body">
             <div class="popup-create-folder__content popup__content">
                 <a href="#">

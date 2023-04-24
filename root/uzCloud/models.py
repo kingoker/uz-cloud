@@ -16,11 +16,11 @@ def file_upload_to(instance, filename):
 
 # Модель файлов
 class File(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, null=True, blank=True,)
     file = models.FileField(upload_to=file_upload_to)
     folder = models.ForeignKey('Folder', on_delete=models.CASCADE, null=True, blank=True,)
     created_at = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True,)
 
     def __str__(self):
         return self.name
@@ -45,7 +45,7 @@ class Folder(models.Model):
     name = models.CharField(max_length=255)
     parent_folder = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
