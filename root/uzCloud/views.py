@@ -1,4 +1,6 @@
 from django.shortcuts import redirect, render
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 from .models import *
 from .forms import *
 
@@ -64,7 +66,8 @@ def add_folder(request, folder):
             newfolder.author = request.user
             newfolder.parent_folder = folder
             newfolder.save()
-
+            return redirect('folder_view', folder_id=newfolder.id)
+        
 
 # Добавление файлов
 def add_file(request, folder):
@@ -75,6 +78,15 @@ def add_file(request, folder):
             newfile.author = request.user
             newfile.folder = folder
             newfile.save()
-            print('Файл сохранён')
-        else:
-            print('Форма не валидна')
+            return redirect('main')
+
+
+@require_POST
+def delete_folder(request):
+    folder_id = request.POST.get('folder_id')
+    try:
+        folder = Folder.objects.get(id=folder_id)
+        folder.delete()
+        return JsonResponse({'success': True})
+    except Folder.DoesNotExist:
+        return JsonResponse({'success': False, 'error': 'Папка не найдена'})
