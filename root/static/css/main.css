@@ -216,6 +216,19 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     color: #D90718;
 }
 
+/* Иконки */
+.word-icon{
+    color: #007acc;
+}
+.image__icon{
+    color: goldenrod;
+}
+.excel-icon{
+    color: #26A639;
+}
+.other-icon{
+    color: #b0b0b0;
+}
 
 /* Видео курсы */
 .courses__list{

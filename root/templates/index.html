@@ -44,9 +44,13 @@
         <section class="sidebar">
             <div class="sidebar__container container">
                 <div class="sidebar__list"  id="menu-act">
-                    <a href="index.html" class="sidebar__item sidebar__item-active">
+                    <a href="{% url 'main' %}" class="sidebar__item sidebar__item-active">
                         <i class="bi bi-folder-fill"></i>
                         Hujjatlar
+                    </a>
+                    <a href="videoCourses.html" class="sidebar__item">
+                        <i class="bi bi-telephone-forward-fill"></i>
+                        Телефоные номера
                     </a>
                     <a href="videoCourses.html" class="sidebar__item">
                         <i class="bi bi-mortarboard-fill"></i>
@@ -112,13 +116,13 @@
                             {% if file.file.name|lower|slice:'-4:' == '.pdf' %}
                             <i class="bi bi-file-earmark-pdf-fill pdf__icon"></i>
                             {% elif file.file.name|lower|slice:'-5:' == '.docx' or file.file.name|lower|slice:'-4:' == '.doc' %}
-                            <i class="bi bi-file-earmark-word"></i>
+                            <i class="bi bi-file-earmark-word-fill word-icon"></i>
                             {% elif file.file.name|lower|slice:'-4:' == '.xls' or file.file.name|lower|slice:'-5:' == '.xlsx' %}
-                            <i class="bi bi-table excel__icon"></i>
+                            <i class="bi bi-table excel__icon excel-icon"></i>
                             {% elif file.file.name|lower|slice:'-4:' == '.jpg' or file.file.name|lower|slice:'-5:' == '.jpeg' or file.file.name|lower|slice:'-4:' == '.png' or file.file.name|lower|slice:'-4:' == '.gif' %}
                             <i class="bi bi-file-image-fill image__icon"></i>
                             {% else %}
-                            <i class="bi bi-file-earmark-fill"></i>
+                            <i class="bi bi-file-earmark-fill other-icon"></i>
                             {% endif %}
                             <p class="folder__name">{{ file.name }}</p>
                         </a>
