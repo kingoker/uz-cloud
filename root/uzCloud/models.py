@@ -33,8 +33,10 @@ class File(models.Model):
 @receiver(post_save, sender=File)
 def update_folder_name(sender, instance, **kwargs):
     if instance.file and not instance.name:  # проверяем, что имя файла не заполнено и файл загружен
-        file_name = os.path.basename(instance.file.name)  # извлекаем имя загруженного файла
-        instance.name = file_name  # устанавливаем имя файла равным имени загруженного файла
+        file_name, file_ext = os.path.splitext(os.path.basename(instance.file.name))  # извлекаем имя и расширение загруженного файла
+        print('Your code')
+        print(file_name)
+        instance.name = file_name  # устанавливаем имя файла равным имени загруженного файла без расширения
         instance.save()  # сохраняем изменения в модели File
 
 

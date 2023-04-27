@@ -7,5 +7,5 @@ from .views import *
 urlpatterns = [
     path('', index, name='main'),
     path('folders/<int:folder_id>/', folder_view, name='folder_view'),
-    path('delete-folder/', delete_folder, name='delete_folder'),
+    path('delete-element/', delete_element, name='delete-element'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

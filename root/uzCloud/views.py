@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from .models import *
@@ -11,13 +11,31 @@ def index(request):
     files = File.objects.filter(folder=None)
     folder = None
 
-    # Форма добавления папки
-    folderForm = addFolderForm()
-    add_folder(request, folder)
+    # Создание новой папки
+    if request.method == 'POST':
+        folderForm = addFolderForm(request.POST)
+        if folderForm.is_valid():
+            folder = folderForm.save(request.user, folder)
+            if folder.parent_folder_id == None:
+                return redirect('main')
+            else:
+                return redirect('folder_view', folder_id=folder.parent_folder_id)
+    else:
+        folderForm = addFolderForm()
+
 
     # Форма добавления файла
-    fileForm = addFileForm()
-    add_file(request, folder)
+    if request.method == 'POST':
+        fileForm = addFileForm(request.POST, request.FILES)
+        if fileForm.is_valid():
+            file = fileForm.save(request.user, folder)
+            if file.folder_id == None:
+                return redirect('main')
+            else:
+                return redirect('folder_view', folder_id=file.folder_id)
+    else:
+        fileForm = addFileForm()
+
 
     context = {
         'fileForm': fileForm,
@@ -36,13 +54,33 @@ def folder_view(request, folder_id):
     subfolders = Folder.objects.filter(parent_folder=folder)
     files = File.objects.filter(folder=folder)
 
-    # Форма добавления папки
-    folderForm = addFolderForm()
-    add_folder(request, folder)
+    # Создание новой папки
+    if request.method == 'POST':
+        folderForm = addFolderForm(request.POST)
+        if folderForm.is_valid():
+            folder = folderForm.save(request.user, folder)
+            print('Your code')
+            print(folder.__dict__)
+            if folder.parent_folder_id == None:
+                return redirect('main')
+            else:
+                return redirect('folder_view', folder_id=folder.parent_folder_id)
+    else:
+        folderForm = addFolderForm()
+
 
     # Форма добавления файла
-    fileForm = addFileForm()
-    add_file(request, folder)
+    if request.method == 'POST':
+        fileForm = addFileForm(request.POST, request.FILES)
+        if fileForm.is_valid():
+            file = fileForm.save(request.user, folder)
+            if file.folder_id == None:
+                return redirect('main')
+            else:
+                return redirect('folder_view', folder_id=file.folder_id)
+    else:
+        fileForm = addFileForm()
+
 
     context = {
         'fileForm': fileForm,
@@ -56,37 +94,15 @@ def folder_view(request, folder_id):
 
 
 
-
-# Функция обработки формы добавления папки
-def add_folder(request, folder):
-    if request.method == 'POST':
-        folder_form = addFolderForm(request.POST)
-        if folder_form.is_valid():
-            newfolder = folder_form.save(commit=False)
-            newfolder.author = request.user
-            newfolder.parent_folder = folder
-            newfolder.save()
-            return redirect('folder_view', folder_id=newfolder.id)
-        
-
-# Добавление файлов
-def add_file(request, folder):
-    if request.method == 'POST':
-        file_form = addFileForm(request.POST, request.FILES)
-        if file_form.is_valid():
-            newfile = file_form.save(commit=False)
-            newfile.author = request.user
-            newfile.folder = folder
-            newfile.save()
-            return redirect('main')
-
-
+# Удаление файла или папки
 @require_POST
-def delete_folder(request):
-    folder_id = request.POST.get('folder_id')
-    try:
-        folder = Folder.objects.get(id=folder_id)
+def delete_element(request):
+    element_id = request.POST.get('element_id')
+    element_type = request.POST.get('element_type')
+    if element_type == 'folder':
+        folder = get_object_or_404(Folder, id=element_id)
         folder.delete()
-        return JsonResponse({'success': True})
-    except Folder.DoesNotExist:
-        return JsonResponse({'success': False, 'error': 'Папка не найдена'})
+    elif element_type == 'file':
+        file = get_object_or_404(File, id=element_id)
+        file.delete()
+    return JsonResponse({'success': True})
