@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     # Мои приложения
     'uzCloud',
+    'phoneNumbers',
 ]
 
 MIDDLEWARE = [
@@ -106,6 +107,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+
+
+# перенаправелние не авторизованного пользователя
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = 'main'
 
 
 # Указываем путь к директории с статическими файлами

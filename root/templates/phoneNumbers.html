@@ -1,0 +1,87 @@
+{% extends 'custom/base.html' %}
+
+<!-- блок Sidebar -->
+{% block sidebar %}
+    <section class="sidebar">
+        <div class="sidebar__container container">
+            <div class="sidebar__list"  id="menu-act">
+                <a href="{% url 'main' %}" class="sidebar__item">
+                    <i class="bi bi-folder-fill"></i>
+                    Hujjatlar
+                </a>
+                <a href="{% url 'phoneNumbers' %}" class="sidebar__item sidebar__item-active">
+                    <i class="bi bi-telephone-forward-fill"></i>
+                    Телефоные номера
+                </a>
+                <a href="videoCourses.html" class="sidebar__item">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    Видео уроки
+                </a>
+                <a href="creating.html" class="sidebar__item">
+                    <i class="bi bi-telegram"></i>
+                    Чат
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <div class="phoneNumbers">
+        <div class="phoneNumbers__container">
+            <div class="phoneNumbers__table_container">
+                <h2 class="phoneNumbers__title text-centered phoneNumbers__title-main">ТЕЛЕФОННЫЕ НОМЕРА АССОЦИАЦИИ "УЗТЕКСТИЛЬПРОМ"</h2>
+                <table class="phoneNumbers__table">
+                    <thead>
+                    <tr>
+                        <th class="width-500">ФИО</th>
+                        <th class="width-500">Должность</th>
+                        <th class="width-300">Внутренний номер</th>
+                        <th class="width-300">Почта</th>
+                        <th class="width-300">Номер</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="phoneNumbers__table_container">
+                <h2 class="phoneNumbers__title text-centered">Информациооно аналитический отдел</h2>
+                <h2 class="phoneNumbers__title text-centered">Информациооно аналитический отдел</h2>
+                <table class="phoneNumbers__table">
+                    <tbody>
+                    <tr>
+                        <td class="width-500">Иванов Иван Иванович</td>
+                        <td class="width-500">Менеджер</td>
+                        <td class="text-centered width-300">123</td>
+                        <td class="text-centered width-300">ivanov@mail.com</td>
+                        <td class="text-centered width-300">8 (800) 555-35-35</td>
+                    </tr>
+                    <tr>
+                        <td class="width-500">Иванов Иван Иванович</td>
+                        <td class="width-500">Менеджер</td>
+                        <td class="text-centered width-300">123</td>
+                        <td class="text-centered width-300">ivanov@mail.com</td>
+                        <td class="text-centered width-300">8 (800) 555-35-35</td>
+                    </tr>
+                    <tr>
+                        <td class="width-500">Иванов Иван Иванович</td>
+                        <td class="width-500">Менеджер</td>
+                        <td class="text-centered width-300">123</td>
+                        <td class="text-centered width-300">ivanov@mail.com</td>
+                        <td class="text-centered width-300">8 (800) 555-35-35</td>
+                    </tr>
+                    <tr>
+                        <td class="width-500">Иванов Иван Иванович</td>
+                        <td class="width-500">Менеджер</td>
+                        <td class="text-centered width-300">123</td>
+                        <td class="text-centered width-300">ivanov@mail.com</td>
+                        <td class="text-centered width-300">8 (800) 555-35-35</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            
+        </div>
+    </div>
+{% endblock %}

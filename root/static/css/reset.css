@@ -21,8 +21,18 @@ a:active {
 	/* outline: none;*/
 }
 
-/* Links */
+/* Автоматически заполненные input */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    border: none;
+    -webkit-text-fill-color: #333; /* цвет текста */
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset; /* фоновый цвет */
+	background-color: #fff;
+    transition: background-color 5000s ease-in-out 0s; /* задержка фона */
+}
 
+/* Links */
 a, a:link, a:visited  {
     /* color: inherit; */
     text-decoration: none;

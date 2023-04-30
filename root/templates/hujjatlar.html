@@ -1,0 +1,123 @@
+{% extends 'custom/base.html' %}
+
+<!-- Блок инструментов -->
+{% block tools %}
+    <div class="header__tools tools">
+        <a href="#popup__folder" class="tools__link popup-link">
+            <i class="bi bi-folder-fill"></i>
+        </a>
+        <a href="#upload__file" class="tools__link popup-link">
+            <i class="bi bi-cloud-arrow-up-fill"></i>
+        </a>
+    </div>
+{% endblock %}
+
+
+<!-- блок Sidebar -->
+{% block sidebar %}
+    <section class="sidebar">
+        <div class="sidebar__container container">
+            <div class="sidebar__list"  id="menu-act">
+                <a href="{% url 'main' %}" class="sidebar__item sidebar__item-active">
+                    <i class="bi bi-folder-fill"></i>
+                    Hujjatlar
+                </a>
+                <a href="{% url 'phoneNumbers' %}" class="sidebar__item">
+                    <i class="bi bi-telephone-forward-fill"></i>
+                    Телефоные номера
+                </a>
+                <a href="videoCourses.html" class="sidebar__item">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    Видео уроки
+                </a>
+                <a href="creating.html" class="sidebar__item">
+                    <i class="bi bi-telegram"></i>
+                    Чат
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+<!-- Основной блок -->
+{% block content %}
+<div class="main__container container">
+    <div class="breadcrumbs">
+        {% for crumb in crumbs %}
+            <a href="{{ crumb.url }}" class="breadcrumbs__item {% if forloop.last %}breadcrumbs__item-active{% endif %}">
+                {{ crumb.name }}
+            </a>
+            {% if not forloop.last %}/ {% endif %}
+        {% endfor %}
+    </div>                
+    <h2 class="main__subtitle">
+        папки
+    </h2>
+    <div class="folder__list">
+        {% for folder in folders %}
+            <div class="folder__item">
+                <a href="{% url 'folder_view' folder_id=folder.id %}" class="folder__link" title="{{ folder.name }}">
+                    <i class="bi bi-folder-fill"></i>
+                    <p class="folder__name">{{ folder.name }}</p>
+                </a>
+                {% if folder.author == request.user %}
+                <a href="#" class="folder__delete" data-id="{{ folder.id }}" data-type="folder">
+                    <i class="bi bi-trash3-fill"></i>
+                </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        {% if subfolders %}
+            {% for folder in subfolders %}
+                <div class="folder__item">
+                    <a href="{% url 'folder_view' folder_id=folder.id %}" class="folder__link" title="{{ folder.name }}">
+                        <i class="bi bi-folder-fill"></i>
+                        <p class="folder__name">{{ folder.name }}</p>
+                    </a>
+                    {% if folder.author == request.user %}
+                    <a href="#" class="folder__delete" data-id="{{ folder.id }}" data-type="folder">
+                        <i class="bi bi-trash3-fill"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+
+    <h2 class="main__subtitle">
+        файлы
+    </h2>
+    <div class="folder__list">
+        {% for file in files %}
+        <div class="folder__item">
+            <a href="{{ MEDIA_URL }}{{ file.file.url }}" class="folder__link" title="{{ file.name }}" target="_blank">
+                {% if file.file.name|lower|slice:'-4:' == '.pdf' %}
+                <i class="bi bi-file-earmark-pdf-fill pdf__icon"></i>
+                {% elif file.file.name|lower|slice:'-5:' == '.docx' or file.file.name|lower|slice:'-4:' == '.doc' %}
+                <i class="bi bi-file-earmark-word-fill word-icon"></i>
+                {% elif file.file.name|lower|slice:'-4:' == '.xls' or file.file.name|lower|slice:'-5:' == '.xlsx' %}
+                <i class="bi bi-table excel__icon excel-icon"></i>
+                {% elif file.file.name|lower|slice:'-4:' == '.jpg' or file.file.name|lower|slice:'-5:' == '.jpeg' or file.file.name|lower|slice:'-4:' == '.png' or file.file.name|lower|slice:'-4:' == '.gif' %}
+                <i class="bi bi-file-image-fill image__icon"></i>
+                {% elif file.file.name|lower|slice:'-4:' == '.mp3' or file.file.name|lower|slice:'-4:' == '.wav' %}
+                <i class="bi bi-file-earmark-music-fill audio__icon"></i>
+                {% else %}
+                <i class="bi bi-file-earmark-fill other-icon"></i>
+                {% endif %}
+                <p class="folder__name">{{ file.name }}</p>
+            </a>
+            {% if file.author == request.user %}
+            <a href="#" class="folder__delete" data-id="{{ file.id }}" data-type="file">
+                <i class="bi bi-trash3-fill"></i>
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    
+                 
+</div>
+{% endblock %}

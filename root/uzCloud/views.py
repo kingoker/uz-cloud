@@ -1,11 +1,18 @@
 from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from .models import *
 from .forms import *
 
 
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
+
+
 # Отображение главной страницы
+@login_required
 def index(request):
     folders = Folder.objects.filter(parent_folder=None)
     files = File.objects.filter(folder=None)
@@ -45,10 +52,11 @@ def index(request):
         'folderForm': folderForm,
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'hujjatlar.html', context)
 
 
 # Отображение содержимого папки
+@login_required
 def folder_view(request, folder_id):
     folder = Folder.objects.get(pk=folder_id)
     subfolders = Folder.objects.filter(parent_folder=folder)
@@ -90,7 +98,7 @@ def folder_view(request, folder_id):
         'files': files,
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'hujjatlar.html', context)
 
 
 
