@@ -5,6 +5,9 @@ from django.views.decorators.http import require_POST
 from .models import *
 from .forms import *
 
+def creating(request):
+    return render(request, 'creating.html')
+
 
 @login_required
 def profile(request):

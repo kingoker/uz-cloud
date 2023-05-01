@@ -106,3 +106,26 @@ document.addEventListener('keydown', function(e){
         popupClose(popupActive);
     }
 });
+
+
+
+// часы
+if(document.querySelector('#time')){
+    setInterval(()=>{
+        const time = document.querySelector('#time');
+        let date = new Date();
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        let seconds = date.getSeconds()
+        if (minutes<10){
+            minutes = "0" + minutes;
+        }
+        if (seconds<10){
+            seconds = "0" + seconds;
+        }
+        if (hours<10){
+            hours = "0" + hours;
+        }
+        time.textContent = hours + ":" + minutes  + ":" + seconds;
+    })
+}

@@ -1,5 +1,12 @@
 from django.shortcuts import render
+from .models import *
 
 
 def phoneNumbers(request):
-    return render(request, 'phoneNumbers.html')
+    departments = Department.objects.all()
+
+    context = {
+        'departments': departments,
+    }
+
+    return render(request, 'phoneNumbers.html', context)

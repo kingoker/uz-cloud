@@ -515,13 +515,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     color: #007acc;
 }
 .phoneNumbers__table_container{
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .phoneNumbers__table{
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 .phoneNumbers__table tr:nth-of-type(even) {
     background-color: #eef9ff;
@@ -540,12 +540,91 @@ table td, table th {
     border: 1px solid #0098FF;
     padding: 10px;
 }
-.width-500{
-    width: 500px;
+.text-grey{
+    color: #8f8f8f;
 }
-.width-300{
+.width-450{
     width: 300px;
 }
+.width-400{
+    width: 400px;
+}
 .width-300{
-    width: 300px;
+    width: 270px;
+}
+.width-200{
+    width: 200px;
+}
+.width-150{
+    width: 150px;
+}
+
+
+
+
+/* Страница в разработке */
+.clock__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.creating__text{
+    text-align: center;
+    font-size: 33px;
+    color: #0098FF;
+    margin-bottom: 30px;
+}
+.clock{
+    cursor: default;
+    position: relative;
+    height: 100px;
+    width: 360px;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    border-radius: 10px;
+    animation: clock 3s linear infinite;
+}
+.clock .display,
+.clock span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.clock .display{
+    z-index: 1;
+    background-color: #fff;
+    height: 85px;
+    width: 345px;
+    border-radius: 6px;
+    text-align: center;
+}
+.clock .display #time{
+    line-height: 85px;
+    color: #000;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: clock 3s linear infinite;
+}
+.clock span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    border-radius: 10px;
+}
+.clock span:first-child{
+    filter: blur(10px);
+}
+.clock span:last-child{
+    filter: blur(20px);
+}
+@keyframes clock{
+    100%{
+        filter: hue-rotate(360deg);
+    }
 }

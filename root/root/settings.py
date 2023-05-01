@@ -111,8 +111,8 @@ USE_TZ = True
 
 
 # перенаправелние не авторизованного пользователя
-LOGIN_URL = '/login/'
-LOGOUT_REDIRECT_URL = 'main'
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'phoneNumbers'
 
 
 # Указываем путь к директории с статическими файлами
