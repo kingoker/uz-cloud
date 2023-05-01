@@ -1,5 +1,17 @@
 {% extends 'custom/base.html' %}
 
+<!-- Блок инструментов -->
+{% block tools %}
+    <div class="header__tools tools">
+        <a href="#popup__folder" class="tools__link popup-link">
+            <i class="bi bi-folder-fill"></i>
+        </a>
+        <a href="#upload__file" class="tools__link popup-link">
+            <i class="bi bi-cloud-arrow-up-fill"></i>
+        </a>
+    </div>
+{% endblock %}
+
 
 <!-- Основной блок -->
 {% block content %}

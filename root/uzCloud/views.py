@@ -27,7 +27,7 @@ def index(request):
         if folderForm.is_valid():
             folder = folderForm.save(request.user, folder)
             if folder.parent_folder_id == None:
-                return redirect('main')
+                return redirect('uzCloud')
             else:
                 return redirect('folder_view', folder_id=folder.parent_folder_id)
     else:
@@ -40,7 +40,7 @@ def index(request):
         if fileForm.is_valid():
             file = fileForm.save(request.user, folder)
             if file.folder_id == None:
-                return redirect('main')
+                return redirect('uzCloud')
             else:
                 return redirect('folder_view', folder_id=file.folder_id)
     else:
@@ -73,7 +73,7 @@ def folder_view(request, folder_id):
             print('Your code')
             print(folder.__dict__)
             if folder.parent_folder_id == None:
-                return redirect('main')
+                return redirect('uzCloud')
             else:
                 return redirect('folder_view', folder_id=folder.parent_folder_id)
     else:
@@ -86,7 +86,7 @@ def folder_view(request, folder_id):
         if fileForm.is_valid():
             file = fileForm.save(request.user, folder)
             if file.folder_id == None:
-                return redirect('main')
+                return redirect('uzCloud')
             else:
                 return redirect('folder_view', folder_id=file.folder_id)
     else:

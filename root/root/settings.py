@@ -112,6 +112,7 @@ USE_TZ = True
 
 # перенаправелние не авторизованного пользователя
 LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'uzCloud'
 LOGOUT_REDIRECT_URL = 'phoneNumbers'
 
 
