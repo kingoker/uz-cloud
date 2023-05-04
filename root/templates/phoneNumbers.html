@@ -1,10 +1,27 @@
 {% extends 'custom/base.html' %}
+{% load static %}
 
 
+<!-- Блок инструментов -->
+{% block tools %}
+    <div class="header__tools tools">
+        <a href="#phoneNumbers" class="tools__link">
+            <i class="bi bi-telephone-outbound-fill"></i>
+            Номера
+        </a>
+        <a href="#upload__file" class="tools__link">
+            <i class="bi bi-bar-chart-steps"></i>
+            Структура
+        </a>
+    </div>
+{% endblock %}
+
+
+<!-- Основной контект -->
 {% block content %}
-    <div class="phoneNumbers">
+    <div class="phoneNumbers" id="phoneNumbers">
         <div class="phoneNumbers__container">
-            <div class="phoneNumbers__table_container">
+            <div class="phoneNumbers__table_container phoneNumbers__table_container-fixed">
                 <h2 class="phoneNumbers__title text-centered phoneNumbers__title-main">ТЕЛЕФОННЫЕ НОМЕРА АССОЦИАЦИИ "УЗТЕКСТИЛЬПРОМ"</h2>
                 <table class="phoneNumbers__table">
                     <thead>
@@ -18,10 +35,11 @@
                     </thead>
                 </table>
             </div>
+            <div class="margin-bottom-100"></div>
 
             {% for department in departments %}
             {% if department.customuser_set.all %}
-            <div class="phoneNumbers__table_container">
+            <div class="phoneNumbers__table_container phoneNumbers__table_container_top">
                 <h2 class="phoneNumbers__title text-centered text-grey">{{ department.name }}</h2>
                 <table class="phoneNumbers__table">
                     <tbody>
@@ -39,8 +57,9 @@
             </div>
             {% endif %}
             {% endfor %}
-
-            
+            <div class="structure" id="structure">
+                <img class="img structure__img" src="" alt="">
+            </div>        
         </div>
     </div>
 {% endblock %}

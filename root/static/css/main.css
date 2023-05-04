@@ -517,6 +517,17 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .phoneNumbers__table_container{
     margin-bottom: 40px;
 }
+.phoneNumbers__table_container-fixed{
+    position: fixed;
+    top: 70px;
+    background-color: #fff;
+    z-index: 100;
+}
+.margin-bottom-100{
+    margin-bottom: 100px;
+}
+
+  
 .phoneNumbers__table{
     font-weight: 400;
     font-size: 20px;
