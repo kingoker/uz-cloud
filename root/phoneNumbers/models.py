@@ -39,3 +39,14 @@ class CustomUser(models.Model):
     class Meta:
         verbose_name = 'Сотрудник'
         verbose_name_plural = 'Сотрудники'
+
+
+# Структура
+class Structure(models.Model):
+    upload_date = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to='structure/')
+
+    class Meta:
+        verbose_name = 'Структура'
+        verbose_name_plural = 'Структуры'

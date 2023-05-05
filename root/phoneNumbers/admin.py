@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Department)
 admin.site.register(Position)
 admin.site.register(CustomUser)
+admin.site.register(Structure)
