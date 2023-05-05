@@ -540,7 +540,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     color: #fff;
 }
 .phoneNumbers__table tr:first-child td {
-    font-size: 25px;
     font-weight: 900;
 }
 
