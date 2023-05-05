@@ -524,9 +524,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     background-color: #fff;
     padding-top: 30px;
     z-index: 0;
-}
-
-  
+} 
 .phoneNumbers__table{
     font-weight: 400;
     font-size: 20px;
@@ -541,6 +539,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     background-color: #007acc;
     color: #fff;
 }
+.phoneNumbers__table tr:first-child td {
+    font-size: 25px;
+    font-weight: 900;
+}
+
 .text-centered{
     text-align: center;
 }

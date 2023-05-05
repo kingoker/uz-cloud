@@ -5,13 +5,19 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
+# Счётчик страниц
+class PageView(models.Model):
+    url = models.CharField(max_length=255, unique=True)
+    views = models.PositiveIntegerField(default=0)
+    
+    def __str__(self):
+        return self.url
+
+
 # Метод для определения пути загрузки файла
 def file_upload_to(instance, filename):
     folder_name = instance.folder.name if instance.folder else 'root_file'
     return f'files/{folder_name}/{filename}'
-
-
-
 
 
 # Модель файлов
