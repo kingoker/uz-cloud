@@ -20,9 +20,14 @@
 <!-- Основной контект -->
 {% block content %}
     <div class="phoneNumbers" id="phoneNumbers">
-        <div class="phoneNumbers__container">
+        <div class="phoneNumbers__container" id="printableArea">
             <div class="phoneNumbers__table_container phoneNumbers__table_container-fixed">
-                <h2 class="phoneNumbers__title text-centered phoneNumbers__title-main">ТЕЛЕФОННЫЕ НОМЕРА АССОЦИАЦИИ "УЗТЕКСТИЛЬПРОМ"</h2>
+                <h2 class="phoneNumbers__title text-centered phoneNumbers__title-main">
+                    ТЕЛЕФОННЫЕ НОМЕРА АССОЦИАЦИИ "УЗТЕКСТИЛЬПРОМ"
+                    <a href="#" class="print-button" onclick="printContent()">
+                        <i class="bi bi-printer"></i>
+                    </a>
+                </h2>
                 <table class="phoneNumbers__table">
                     <thead>
                     <tr>

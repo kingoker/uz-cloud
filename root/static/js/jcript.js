@@ -150,3 +150,24 @@ for (let anchor of anchors) {
     }); // прокручиваем страницу к целевому элементу с учетом отступа
   });
 }
+
+
+
+// Распечатка телефонных номеров
+function printContent() {
+    // Получаем элемент для печати
+    var printableArea = document.getElementById('printableArea');
+    
+    // Создаем новое окно для печати
+    var printWindow = window.open('', '_blank', 'height=500,width=500');
+  
+    // Записываем содержимое элемента для печати в новое окно
+    printWindow.document.write(printableArea.innerHTML);
+  
+    // Запускаем печать
+    printWindow.print();
+  
+    // Закрываем окно для печати
+    printWindow.close();
+  }
+  
