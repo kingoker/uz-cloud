@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # Мои приложения
     'uzCloud',
     'phoneNumbers',
+    'faceID',
 ]
 
 MIDDLEWARE = [

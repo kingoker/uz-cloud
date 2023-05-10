@@ -1,0 +1,19 @@
+{% extends 'custom/base.html' %}
+{% load static %}
+
+
+<!-- Блок инструментов -->
+{% block tools %}
+   
+{% endblock %}
+
+
+<!-- Основной контект -->
+{% block content %}
+    <div class="faceID" >
+        ПОСЕЩАЕМОСТЬ СОТРУДНИКОВ АССОЦИАЦИИ "УЗТЕКСТИЛЬПРОМ"
+        {% for user in users %}
+            {{ user }}
+        {% endfor %}
+    </div>
+{% endblock %}

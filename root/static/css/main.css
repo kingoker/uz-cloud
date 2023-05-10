@@ -644,29 +644,24 @@ table td, table th {
 
 /* Параметры для печати */
 @media print {
-    .phoneNumbers__table_container {
-        border: 1px solid black;
-    }
-    .phoneNumbers__table td,
-    .phoneNumbers__table th {
-        border: 1px solid black;
-    }
-    * {
-        -webkit-print-color-adjust: exact;
-        color-adjust: exact;
-    }
     @page {
-      size: A4;
+        size: A4;
     }
-    body {
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
+    body * {
+        visibility: hidden;
     }
-    
+    #printableArea,
+    #printableArea * {
+        visibility: visible;
+        margin-top: 0px;
+    }
     #printableArea {
-      width: 210mm;
-      height: 297mm;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #structure{
+        display: none;
     }
   }
   
