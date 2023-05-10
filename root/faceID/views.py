@@ -1,10 +1,14 @@
 from django.shortcuts import render
-from hikvisionapi import Client
+from pyhik.hikvision import HikCamera
 
 
 def faceID(request):
-    client = Client('http://192.168.1.40', 'admin', 'dima1754422')
-    users = client.faces.get_users()
+    camera = HikCamera('http://192.168.1.40', 'admin', 'dima1754422')
+    users = camera.get_device_info()
+    
+    print('Your code:')
+    print(users)
+
 
     context = {
         'users': users,
