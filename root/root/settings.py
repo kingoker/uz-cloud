@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'uzCloud',
     'phoneNumbers',
     'faceID',
+    'video_tutorials',
 ]
 
 MIDDLEWARE = [

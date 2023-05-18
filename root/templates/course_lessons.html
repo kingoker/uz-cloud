@@ -1,0 +1,24 @@
+{% extends 'custom/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main__container container">
+        <h1 class="phoneNumbers__title text-centered phoneNumbers__title-main">
+            {{ course.name }}
+        </h1>
+        <div class="course__list">
+
+            {% for lesson in lessons %}
+            <div class="lesson__item">
+                <div class="lesson__img">
+                    <iframe width="100%" height="100%" class="img" src="{{ lesson.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="cource__text">
+                    <p class="lesson__name">{{ lesson.name }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

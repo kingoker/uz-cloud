@@ -665,3 +665,64 @@ table td, table th {
     }
   }
   
+
+
+
+
+
+
+
+
+
+/* Приложение куров */
+.course__list{
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cource__item{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-width: 300px;
+}
+.lesson__item{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-width: 500px;
+}
+.cource__img{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 3px 11px -4px rgba(34, 60, 80, 0.48);
+    -moz-box-shadow: 0px 3px 11px -4px rgba(34, 60, 80, 0.48);
+    box-shadow: 0px 3px 11px -4px rgba(34, 60, 80, 0.48);
+    transition: all 0.5s ease;
+}
+.lesson__img{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.cource__img:hover{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #e2e2e2;
+}
+.cource__name, .lesson__name{
+    color: #007acc;
+    font-size: 20px;
+}
+.cource__name:hover{
+    color: #004879;
+}
+.cource__lessonCount{
+    color: #b0b0b0;
+}
