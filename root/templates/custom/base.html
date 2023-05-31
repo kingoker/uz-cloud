@@ -56,17 +56,9 @@
                         <i class="bi bi-mortarboard-fill"></i>
                         Видео уроки
                     </a>
-                    <a href="{% url 'creating' %}" class="sidebar__item">
-                        <i class="bi bi-person-bounding-box"></i>
-                        Посещаемость
-                    </a>
-                    <a href="{% url 'creating' %}" class="sidebar__item">
-                        <i class="bi bi-telegram"></i>
-                        Чат
-                    </a>
-                    <a href="{% url 'creating' %}" class="sidebar__item">
-                        <i class="bi bi-check2-square"></i>
-                        To-Do List
+                    <a href="{% url 'chatgpt' %}" class="sidebar__item">
+                        <i class="bi bi-chat-square-dots-fill"></i>
+                        Чат-бот
                     </a>
                 </div>
             </div>
@@ -118,6 +110,8 @@
         </div>
     </div>
     
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="{% static 'js/django.js' %}"></script>
     <script src="{% static 'js/jcript.js' %}"></script>
 </body>

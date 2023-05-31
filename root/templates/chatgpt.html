@@ -1,0 +1,48 @@
+{% extends 'custom/base.html' %}
+{% load static %}
+
+<!-- Блок инструментов -->
+{% block tools %}
+
+{% endblock %}
+
+<!-- Основной контекст -->
+{% block content %}
+    <div class="chat">
+        <h2>Чат с GPT</h2>
+        <form class="message-form">
+            {%csrf_token%}
+            <div class="input-group">
+              <input type="text" class="form-control message-input" placeholder="Type your message...">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-primary btn-send">Send</button>
+              </div>
+            </div>
+        </form>
+        <ul class="list-unstyled messages-list">
+        
+            <!-- <li class="message received">
+              <div class="message-text">
+                <div class="message-sender">
+                  <b>AI Chatbot</b>
+                </div>
+                <div class="message-content">
+                  Hi {{user.username}}, I am your AI Chatbot, you can ask me anything.
+                </div>
+              </div>
+            </li> -->
+{% comment %}     
+            <li class="message sent">
+              <div class="message-text">
+                <div class="message-sender">
+                  <b>You</b>
+                </div>
+                <div class="message-content">
+                  {{chat.message}}
+                </div>
+              </div>
+            </li> {% endcomment %}
+          </ul>       
+    </div>
+
+{% endblock %}

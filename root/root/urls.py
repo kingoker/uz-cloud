@@ -7,4 +7,5 @@ urlpatterns = [
     path('uzCloud/', include('uzCloud.urls'), name='uzCloud'),
     path('faceid/', include('faceID.urls'), name='faceid'),
     path('video/', include('video_tutorials.urls'), name='videoList'),
+    path('chatgpt/', include('chatgpt.urls'), name='chatgpt'),
 ]

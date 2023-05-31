@@ -3,11 +3,11 @@ from pyhik.hikvision import HikCamera
 
 
 def faceID(request):
-    camera = HikCamera('http://192.168.1.40', 'admin', 'dima1754422')
-    users = camera.get_device_info()
+    camera = HikCamera('192.168.1.41', 'admin', 'dima1754422')
+    reports = camera.get_event_triggers()
     
     context = {
-        'users': users,
+        'reports': reports,
     }
 
     return render(request, 'faceID.html', context)

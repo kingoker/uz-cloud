@@ -12,8 +12,8 @@
 {% block content %}
     <div class="faceID" >
         ПОСЕЩАЕМОСТЬ СОТРУДНИКОВ АССОЦИАЦИИ "УЗТЕКСТИЛЬПРОМ"
-        {% for user in users %}
-            {{ user }}
+        {% for report in reports %}
+        {{ reports }}
         {% endfor %}
     </div>
 {% endblock %}
