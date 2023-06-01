@@ -6,9 +6,19 @@ if (text){
 
 
 // Чат GPT
+
 const messagesList = document.querySelector('.messages-list');
-  const messageForm = document.querySelector('.message-form');
-  const messageInput = document.querySelector('.message-input');
+const messageForm = document.querySelector('.message-form');
+const messageInput = document.querySelector('.message-input');
+
+if(messageForm){
+    // Изменяем высоту input
+    messageInput.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    });
+    
+
 
   messageForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -37,7 +47,7 @@ const messagesList = document.querySelector('.messages-list');
         messageItem.innerHTML = `
         <div class="message-text">
             <div class="message-sender">
-              <b>AI Chatbot</b>
+              <b>NeyroHero</b>
             </div>
             <div class="message-content">
                 ${response}
@@ -47,6 +57,8 @@ const messagesList = document.querySelector('.messages-list');
         messagesList.appendChild(messageItem);
       });
   });
+}
+
 
 
 

@@ -726,3 +726,44 @@ table td, table th {
 .cource__lessonCount{
     color: #b0b0b0;
 }
+
+
+
+
+
+/*  */
+.gpt__block{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.input-group, .messages-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.message-input{
+    height: auto;
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+    min-height: 100px;
+}
+.message__button{
+    max-width: 100%;
+}
+.message-input:focus {
+    outline: none;
+    border-color: transparent;
+}
+.message-text{
+    padding: 10px;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+.message-sender{
+    font-size: 20px;
+    color: #007acc;
+}

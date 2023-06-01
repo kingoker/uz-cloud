@@ -3,7 +3,7 @@ from django.http import JsonResponse
 import openai
 
 # Установите свой API-токен
-openai.api_key = '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'
+openai.api_key = ''
 
 
 def chatgpt(request):
@@ -12,7 +12,7 @@ def chatgpt(request):
         response = openai.ChatCompletion.create(
             model = "gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "Ты мой ассистент, который всегда отвечает на русском языке"},
+                {"role": "system", "content": "Тебя зовут Камола Ты отвечаешь только на русском языке"},
                 {"role": "user", "content": message},
             ]
         )

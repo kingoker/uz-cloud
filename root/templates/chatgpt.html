@@ -8,41 +8,21 @@
 
 <!-- Основной контекст -->
 {% block content %}
-    <div class="chat">
-        <h2>Чат с GPT</h2>
-        <form class="message-form">
+<div class="main__container container">
+  <div class="chat">
+        <h2 class="phoneNumbers__title text-centered phoneNumbers__title-main">NeyroHero v.1.0</h2>
+        <div class="gpt__block">
+          <form class="message-form">
             {%csrf_token%}
             <div class="input-group">
-              <input type="text" class="form-control message-input" placeholder="Type your message...">
+              <textarea type="text" class="form-control message-input popup__input" placeholder="Напишите свой запрос..."></textarea>
               <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-send">Send</button>
+                <button type="submit" class="message__button popup__button button">Send</button>
               </div>
             </div>
-        </form>
-        <ul class="list-unstyled messages-list">
-        
-            <!-- <li class="message received">
-              <div class="message-text">
-                <div class="message-sender">
-                  <b>AI Chatbot</b>
-                </div>
-                <div class="message-content">
-                  Hi {{user.username}}, I am your AI Chatbot, you can ask me anything.
-                </div>
-              </div>
-            </li> -->
-{% comment %}     
-            <li class="message sent">
-              <div class="message-text">
-                <div class="message-sender">
-                  <b>You</b>
-                </div>
-                <div class="message-content">
-                  {{chat.message}}
-                </div>
-              </div>
-            </li> {% endcomment %}
-          </ul>       
+          </form>
+          <ul class="list-unstyled messages-list"></ul>
+        </div>
     </div>
-
+</div>
 {% endblock %}
