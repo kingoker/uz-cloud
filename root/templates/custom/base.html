@@ -62,6 +62,21 @@
                     </a>
                 </div>
             </div>
+
+            {% if users_with_birthday %}
+            {% for user in users_with_birthday %}
+            <div class="hbd">
+                <div class="hbd__container">
+                    {% if user.photo %}
+                    <img class="hbd__photo img" src="{{ user.photo.url }}" alt="">
+                    {% else %}
+                    <p class="hbd__photo">{{ user.full_name }}</p>
+                    {% endif %}
+                    <img class="hbd__animated" src="https://media3.giphy.com/media/lRulINdpws4ZiB9Hut/giphy.gif?cid=ecf05e47gfors5nb8kv0f8zd0fs406v0310t7ezwfrjd40kk&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="">
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
         </section>
     
         
