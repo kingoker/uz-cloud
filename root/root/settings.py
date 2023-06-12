@@ -33,9 +33,7 @@ INSTALLED_APPS = [
     # Мои приложения
     'uzCloud',
     'phoneNumbers',
-    'faceID',
     'video_tutorials',
-    'chatgpt',
 ]
 
 MIDDLEWARE = [

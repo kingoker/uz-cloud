@@ -36,6 +36,7 @@
                         <th class="width-200">Внутренний номер</th>
                         <th class="width-300">Почта</th>
                         <th class="width-200">Номер</th>
+                        <th class="width-200">ДР</th>
                     </tr>
                     </thead>
                 </table>
@@ -54,6 +55,7 @@
                         <td class="text-centered width-200">{{ user.internal_number }}</td>
                         <td class="text-centered width-300">{{ user.email }}</td>
                         <td class="text-centered width-200">{{ user.phone_number }}</td>
+                        <td class="text-centered width-200">{{ user.birth_date }}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
