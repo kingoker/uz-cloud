@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZTS-Services</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="body">
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header__container container">
+            <div class="header__logo">
+                <a href="/"><img class="img" src="../img/logo.svg" alt="Uztextile"></a>
+            </div>
+            <nav class="header__list">
+                <a class="header__item" href="../sertification/sertificats.html">Сертификация</a>
+                <a class="header__item" href="../partnership/about.html">Членство</a>
+                <a class="header__item" href="../subsidies/subsidies.html">Субсидии</a>
+                <a class="header__item" href="../exhibitions/exhibitions.html">Выставки</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Все услуги -->
+    <section class="sertificateForm">
+        <div class="sertificateForm__container container">
+            <h1 class="sertificateForm__title title_h1">Форма заявки</h1>
+            <form class="my-form">
+                <div class="form-field">
+                  <label for="username">Имя пользователя:</label>
+                  <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+                </div>
+              
+                <div class="form-field">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                </div>
+              
+                <div class="form-field">
+                  <label for="message">Сообщение:</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Введите ваше сообщение"></textarea>
+                </div>
+              
+                <div class="form-field">
+                  <label for="country">Страна:</label>
+                  <select id="country" name="country">
+                    <option value="USA">США</option>
+                    <option value="Canada">Канада</option>
+                    <option value="UK">Великобритания</option>
+                    <!-- Добавьте другие варианты стран здесь -->
+                  </select>
+                </div>
+              
+                <div class="form-field">
+                  <button type="submit" class="submit-button">Отправить</button>
+                </div>
+            </form>              
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer__container container">
+
+        </div>      
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

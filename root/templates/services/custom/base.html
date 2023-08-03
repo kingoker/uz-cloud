@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZTS-Services</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="{% static 'services/css/main.css' %}">
+</head>
+<body class="body">
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header__container container">
+            <div class="header__logo">
+                <a href="{% url 'services' %}"><img class="img" src="{% static 'services/img/logo.svg' %}" alt="Uztextile"></a>
+            </div>
+            <nav class="header__list">
+                <a class="header__item" href="{% url 'sertificats' %}">Сертификация</a>
+                <a class="header__item" href="{% url 'partnership' %}">Членство</a>
+                <a class="header__item" href="{% url 'subsidies' %}">Субсидии</a>
+                <a class="header__item" href="{% url 'exhibitions' %}">Выставки</a>
+            </nav>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer__container container">
+
+        </div>      
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

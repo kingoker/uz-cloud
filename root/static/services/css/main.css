@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: #525252;
+}
+
+/*  */
+.container{
+    max-width: 1400px;
+    margin: 0px auto;
+    padding: auto 30px;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.title_h1{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+
+
+/* Шапка */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background: rgba( 255, 255, 255, 0.45 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    -webkit-box-shadow: 0px 6px 6px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 6px 6px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 6px 6px 0px rgba(34, 60, 80, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+.header__container{
+    display: flex;
+    gap: 30px;
+}
+.header__logo{
+    width: 60px;
+    height: 60px;
+}
+.header__logo a img{
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+.header__list{
+    align-items: center;
+    display: flex;
+    gap: 30px;
+}
+.header__item{
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    color: #0697FF;
+}
+.header__item:hover{
+    text-decoration: underline;
+}
+
+
+/* Услуги */
+.services{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+.services__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto 50px auto;
+}
+.services__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.services__item{
+    min-width: 300px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 30px;
+    background: rgba( 255, 255, 255, 0.45 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 10px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 30px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px 0px #fff;
+    transition: all 0.5s ease;
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+}
+.services__item:hover{
+    box-shadow: none;
+    color: #0697FF;
+    background-color: #fff;
+}
+
+
+
+
+/* Список сертификатов  */
+.sertificats{
+    margin: 70px auto;
+    display: flex;
+    justify-content: center;
+}
+.sertificats__container{
+    margin-top: 50px;
+}
+.sertificats__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.sertificats__item {
+    display: block;
+    padding: 15px;
+    width: 250px;
+    min-height: 300px;
+    background: transparent;
+    border: 2px solid #0697FF;
+    box-shadow: 2px 2px 5px #bcbcbc;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.sertificats__item:hover {
+    color: #0697FF;
+    box-shadow: 2px 2px 5px #0697FF;
+}
+.sertificate__img{
+    width: 100%;
+    height: 100px;
+} 
+.sertificate__text{
+    color: #9c9c9c;
+    margin-top: 10px;
+}
+.sertificate__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 2px solid #0697FF;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+}
+.sertificate__button:hover{
+    background-color: #0697FF;
+    color: #fff;
+}
+
+
+
+/* Информация о сертификате */
+.aboutSertificate{
+    margin: 70px auto;
+    display: flex;
+    justify-content: center;
+}
+.aboutSertificate__container{
+    padding-top: 50px;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.aboutSertificate__descriptionBlock{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    font-size: 24px;
+}
+.aboutSertificate__img{
+    width: 100%;
+    max-height: 300px;
+}
+.aboutSertificate__img img{
+    min-width: 300px;
+}
+.aboutSertificate__criterias{
+    font-size: 18px;
+    margin-top: 30px;
+}
+.aboutSertificate__button{
+    width: 100%;
+    height: 50px;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #0697FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 24px;
+    transition: all 0.5s ease;
+    margin-top: 50px;
+}
+.aboutSertificate__button:hover{
+    border: 2px solid #0697FF;
+    background-color: #fff;
+    color: #0697FF;
+}
+
+
+
+/* Страница с формами */
+.sertificateForm{
+    margin: 70px auto;
+}
+.sertificateForm__container{
+    padding-top: 70px;
+}
+.my-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #0697FF;
+    border-radius: 10px;
+}
+.form-field {
+    margin-bottom: 20px;
+}
+.form-field label {
+    display: block;
+    font-weight: bold;
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-field textarea {
+    resize: vertical;
+}
+.form-field .submit-button {
+    background-color: #0697FF;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.form-field .submit-button:hover {
+    background-color: #fff;
+    border: 2px solid #0697FF;
+    color: #0697FF;
+}
+
+
+
+
+
+
+/* Старница выставок */
+.exhibitions{
+    margin: 70px auto;
+}
+.exhibitions__container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+.exhibitions__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.exhibitions__item{
+    text-decoration: none;
+    display: block;
+    max-width: 300px;
+}
+.exhibitions__item:hover .exhibitions__img{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.exhibitions__img{
+    border: 1px solid #0697FF;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fff;
+    width: 300px;
+    height: 200px;
+    -webkit-box-shadow: 0px 6px 6px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 6px 6px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 6px 6px 0px rgba(34, 60, 80, 0.2);
+    margin-bottom: 10px;
+}
+.exhibitions__info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.exhibitions__name{
+    font-weight: 500;
+}
+.exhibitions__item:hover .exhibitions__name{
+    color: #0697FF;
+}
+.exhibitions__date span{
+    font-weight: 500;
+}
+.exhibitions__description{
+    color: #9c9c9c;
+}
+
+
+
+/* Страницы субсидии */
+.subsidies{
+    margin: 70px auto;
+}
+.subsidies__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+.subsidies__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.subsidies__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    min-height: 100px;
+    padding: 10px;
+    border: 2px solid #0697FF;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #fff;
+    transition: all 0.5s ease;
+}
+.subsidies__category{
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+.subsidies__item:hover{
+    background-color: #0697FF;
+    box-shadow: 2px 2px 5px #9c9c9c;
+}
+.subsidies__item:hover .subsidies__category{
+    color: #fff;
+}
+
+
+
+
+
+/* О субсидиях */
+.aboutSubsidies{
+    margin: 70px auto;
+}
+.aboutSubsidies__container{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.aboutSubsidies__list{
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+.aboutSubsidies__item{
+    display: block;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration: none;
+}
+.aboutSubsidies__item span{
+    color: #0697FF;
+    font-size: 26px;
+    line-height: 30px;
+}
+.aboutSubsidies__item:hover{
+    color: #0697FF;
+}

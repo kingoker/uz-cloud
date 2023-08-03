@@ -6,4 +6,5 @@ urlpatterns = [
     path('', include('phoneNumbers.urls'), name='phoneNumbers'),
     path('uzCloud/', include('uzCloud.urls'), name='uzCloud'),
     path('video/', include('video_tutorials.urls'), name='videoList'),
+    path('services/', include('services.urls'), name='services'),
 ]

@@ -1,0 +1,42 @@
+{% extends 'services/custom/base.html' %}
+    
+
+{% block content %}
+    <!-- Все услуги -->
+    <section class="sertificateForm">
+        <div class="sertificateForm__container container">
+            <h1 class="sertificateForm__title title_h1">Форма заявки</h1>
+            <form class="my-form">
+                <div class="form-field">
+                  <label for="username">Имя пользователя:</label>
+                  <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+                </div>
+              
+                <div class="form-field">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                </div>
+              
+                <div class="form-field">
+                  <label for="message">Сообщение:</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Введите ваше сообщение"></textarea>
+                </div>
+              
+                <div class="form-field">
+                  <label for="country">Страна:</label>
+                  <select id="country" name="country">
+                    <option value="USA">США</option>
+                    <option value="Canada">Канада</option>
+                    <option value="UK">Великобритания</option>
+                    <!-- Добавьте другие варианты стран здесь -->
+                  </select>
+                </div>
+              
+                <div class="form-field">
+                  <button type="submit" class="submit-button">Отправить</button>
+                </div>
+            </form>              
+        </div>
+    </section>
+
+{% endblock %}

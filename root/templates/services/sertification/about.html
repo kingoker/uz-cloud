@@ -1,0 +1,27 @@
+{% extends 'services/custom/base.html' %}
+    
+
+{% block content %}
+
+    <!-- Все услуги -->
+    <section class="aboutSertificate">
+        <div class="aboutSertificate__container container">
+            <h1 class="aboutSertificate__title title_h1">{{ certificate.name |safe }}</h1>
+            <div class="aboutSertificate__descriptionBlock">
+                <div class="aboutSertificate__img">
+                    <img class="img" src="{{ certificate.image.url }}" alt="{{ certificate.name }}">
+                </div>
+                <p class="aboutSertificate__description">
+                    {{ certificate.description |safe }}
+                </p>
+            </div>
+            <div class="aboutSertificate__criterias">
+                {{ certificate.text|safe }}
+            </div>
+            <a href="{% url 'sertificatsForm' %}" class="aboutSertificate__button">
+                Получить сертификат
+            </a>
+        </div>
+    </section>
+
+{% endblock %}

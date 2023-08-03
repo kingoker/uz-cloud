@@ -1,0 +1,21 @@
+{% extends 'services/custom/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Все услуги -->
+    <section class="aboutSubsidies">
+        <div class="aboutSubsidies__container container">
+            <h1 class="aboutSertificate__title title_h1">Список УП</h1>
+            <div class="aboutSubsidies__list">
+                <a href="https://lex.uz/ru/docs/6501998" target="_blank" class="aboutSubsidies__item"><span>№ УП-96</span> - О ВНЕСЕНИИ ИЗМЕНЕНИЙ, А ТАКЖЕ ПРИЗНАНИИ УТРАТИВШИМИ СИЛУ НЕКОТОРЫХ АКТОВ ПРЕЗИДЕНТА РЕСПУБЛИКИ УЗБЕКИСТАН И ПРАВИТЕЛЬСТВА РЕСПУБЛИКИ УЗБЕКИСТАН</a>
+                <a href="https://lex.uz/ru/docs/6438147" target="_blank" class="aboutSubsidies__item"><span>№ УП-58</span> - О ВНЕСЕНИИ ИЗМЕНЕНИЙ В УКАЗ ПРЕЗИДЕНТА РЕСПУБЛИКИ УЗБЕКИСТАН ОТ 23 ДЕКАБРЯ 2022 ГОДА № УП-270 «ОБ УСТАНОВЛЕНИИ ДОПОЛНИТЕЛЬНЫХ НЕРАБОЧИХ ДНЕЙ В ПЕРИОД ПРАЗДНОВАНИЯ ОФИЦИАЛЬНЫХ ДАТ И ПЕРЕНОСЕ ВЫХОДНЫХ ДНЕЙ В 2023 ГОДУ»</a>
+                <a href="https://lex.uz/uz/docs/6549077" target="_blank" class="aboutSubsidies__item"><span>№ УП-119</span> - О социальной поддержке населения Республики Каракалпакстан и признании прав на жилье</a>
+                <a href="https://lex.uz/ru/docs/6501998" target="_blank" class="aboutSubsidies__item"><span>№ УП-96</span> - О ВНЕСЕНИИ ИЗМЕНЕНИЙ, А ТАКЖЕ ПРИЗНАНИИ УТРАТИВШИМИ СИЛУ НЕКОТОРЫХ АКТОВ ПРЕЗИДЕНТА РЕСПУБЛИКИ УЗБЕКИСТАН И ПРАВИТЕЛЬСТВА РЕСПУБЛИКИ УЗБЕКИСТАН</a>
+            </div>
+            <a href="{% url 'subsidiesForm' %}" class="aboutSertificate__button">
+                Получить субсидию
+            </a>
+        </div>
+    </section>
+
+{% endblock %}
