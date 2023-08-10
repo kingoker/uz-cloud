@@ -5,9 +5,6 @@ from .views import *
 
 
 urlpatterns = [
-    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
-
-
     path('', services, name='services'),
 
 
@@ -25,7 +22,7 @@ urlpatterns = [
 
     # Субсидии
     path('subsidies/', subsidies, name='subsidies'),
-    path('subsidiesAbout/', subsidiesAbout, name='subsidiesAbout'),
+    path('subsidiesAbout/<int:pk>/', subsidiesAbout, name='subsidiesAbout'),
     path('subsidiesForm/', subsidiesForm, name='subsidiesForm'),
 
 

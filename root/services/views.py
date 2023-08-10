@@ -22,7 +22,6 @@ def services(request):
 # **********************************#
 # Страница Сертификатов
 def sertificats(request):
-    # Получаем все опубликованные сертификаты из базы данных
     certificates = Certificate.objects.filter(published=True)
 
     context = {
@@ -67,9 +66,10 @@ def sertificatsForm(request):
 # **********************************#
 # Страница Членства
 def partnership(request):
+    partnership = Partnership.objects.filter(published=True).last()
 
     context = {
-
+        'partnership': partnership,
     }
 
     return render(request, 'services/partnership/about.html', context)
@@ -100,19 +100,23 @@ def partnershipForm(request):
 # **********************************#
 # Страница Субсидий
 def subsidies(request):
+    subsidies = Subsidies.objects.filter(published=True)
 
     context = {
-
+        'subsidies': subsidies,
     }
 
     return render(request, 'services/subsidies/subsidies.html', context)
 
 
 # Страница Сертификатов-список
-def subsidiesAbout(request):
+def subsidiesAbout(request, pk):
+    subsidies = get_object_or_404(Subsidies, pk=pk)
+    laws = Law.objects.filter(subsidy=subsidies)
 
     context = {
-
+        'subsidies': subsidies,
+        'laws': laws,
     }
 
     return render(request, 'services/subsidies/listSubsidies.html', context)

@@ -7,24 +7,11 @@
         <div class="subsidies__container container">
             <h1 class="sertificats__title title_h1">Субсидии в текстильной отрасли</h1>
             <div class="subsidies__list">
-                <a href="{% url 'subsidiesAbout' %}" class="subsidies__item">
-                    <p class="subsidies__category">Экспорт</p>
-                </a>
-                <a href="{% url 'subsidiesAbout' %}" class="subsidies__item">
-                    <p class="subsidies__category">Оборудование</p>
-                </a>
-                <a href="{% url 'subsidiesAbout' %}" class="subsidies__item">
-                    <p class="subsidies__category">Логистика</p>
-                </a>
-                <a href="{% url 'subsidiesAbout' %}" class="subsidies__item">
-                    <p class="subsidies__category">Сертификация</p>
-                </a>
-                <a href="{% url 'subsidiesAbout' %}" class="subsidies__item">
-                    <p class="subsidies__category">Выставки</p>
-                </a>
-                <a href="{% url 'subsidiesAbout' %}" class="subsidies__item">
-                    <p class="subsidies__category">Возврат НДС</p>
-                </a>
+                {% for subsidy in subsidies %}
+                    <a href="{% url 'subsidiesAbout' subsidy.pk %}" class="subsidies__item">
+                        <p class="subsidies__category">{{ subsidy.name }}</p>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </section>

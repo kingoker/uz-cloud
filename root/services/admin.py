@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import *
 
 
+
+# Сертификация
 class CertificateAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name', 'published')
     list_display_links = ('name',)  # Поле name будет нажимаемым и ссылаться на страницу редактирования объекта
@@ -10,3 +12,26 @@ class CertificateAdmin(admin.ModelAdmin):
     search_fields = ('name',)  # Поиск по тексту и кнопке
 
 admin.site.register(Certificate, CertificateAdmin)
+
+
+
+
+# Членство
+admin.site.register(Partnership)
+
+
+
+
+
+
+# Субсидии
+class LawInline(admin.TabularInline):
+    model = Law
+    extra = 2
+
+
+class SubsidiesAdmin(admin.ModelAdmin):
+    inlines = [LawInline]
+
+
+admin.site.register(Subsidies, SubsidiesAdmin)
