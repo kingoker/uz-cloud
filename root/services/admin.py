@@ -16,8 +16,16 @@ admin.site.register(Certificate, CertificateAdmin)
 
 
 
+
+
+
+
 # Членство
 admin.site.register(Partnership)
+
+
+
+
 
 
 
@@ -35,3 +43,22 @@ class SubsidiesAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Subsidies, SubsidiesAdmin)
+
+
+
+
+
+
+
+
+
+
+
+# 
+class ExhibitionAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'name', 'date', 'published')
+    list_display_links = ('name',)
+    list_filter = ('date',)
+    search_fields = ('name',)
+
+admin.site.register(Exhibition, ExhibitionAdmin)

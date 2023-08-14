@@ -2,6 +2,7 @@ from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
 
 
+
 # Сертификация
 class Certificate(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
@@ -22,6 +23,9 @@ class Certificate(models.Model):
 
 
 
+
+
+
 # Членство
 class Partnership(models.Model):
     text=CKEditor5Field('Text', config_name='extends')
@@ -33,6 +37,11 @@ class Partnership(models.Model):
     class Meta:
         verbose_name = 'Членство'
         verbose_name_plural = 'Членство'
+
+
+
+
+
 
 
 
@@ -64,3 +73,26 @@ class Law(models.Model):
         verbose_name_plural = 'Законы'
 
 
+
+
+
+
+
+
+
+
+# Выставки
+class Exhibition(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Название')
+    text=CKEditor5Field('Text', config_name='extends')
+    date = models.DateField(verbose_name='Дата выставки') 
+    image = models.FileField(upload_to='services/certificates/', verbose_name='Изображение')  # Поле для загрузки файла
+    published = models.BooleanField(default=True, verbose_name='Опубликован')
+
+
+    def __str__(self):
+        return self.name[:30]  # Возвращает первые 50 символов текста сертификата (можно изменить)
+
+    class Meta:
+        verbose_name = 'Выставка'
+        verbose_name_plural = 'Выставки'

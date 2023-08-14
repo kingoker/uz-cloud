@@ -28,7 +28,7 @@ urlpatterns = [
 
     # Выставки
     path('exhibitions/', exhibitions, name='exhibitions'),
-    path('exhibitionsAbout/', exhibitionsAbout, name='exhibitionsAbout'),
+    path('exhibitionsAbout/<int:pk>/', exhibitionsAbout, name='exhibitionsAbout'),
     path('exhibitionsForm/', exhibitionsForm, name='exhibitionsForm'),
 
 

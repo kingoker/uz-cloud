@@ -8,66 +8,18 @@
         <div class="exhibitions__container container">
             <h1 class="sertificats__title title_h1">Выставки текстильной отрасли</h1>
             <div class="exhibitions__list">
-                <a href="{% url 'exhibitionsAbout' %}" class="exhibitions__item">
-                    <div class="exhibitions__img">
-                        <img class="img " src="{% static 'services/img/exhibitions/hometex.png' %}" alt="">
-                    </div>
-                    <div class="exhibitions__info">
-                        <h2 class="exhibitions__name">Название Выставки</h2>
-                        <p class="exhibitions__description">Все текстильные компании показывают свои успехи в новых материальных направлениях...</p>
-                        <p class="exhibitions__date"><span>Дата: </span>28.07.2023</p>
-                    </div>
-                </a>
-                <a href="{% url 'exhibitionsAbout' %}" class="exhibitions__item">
-                    <div class="exhibitions__img">
-                        <img class="img " src="{% static 'services/img/exhibitions/dresses.jpg' %}" alt="">
-                    </div>
-                    <div class="exhibitions__info">
-                        <h2 class="exhibitions__name">Название Выставки</h2>
-                        <p class="exhibitions__description">Все текстильные компании показывают свои успехи в новых материальных направлениях...</p>
-                        <p class="exhibitions__date"><span>Дата: </span>28.07.2023</p>
-                    </div>
-                </a>
-                <a href="{% url 'exhibitionsAbout' %}" class="exhibitions__item">
-                    <div class="exhibitions__img">
-                        <img class="img " src="{% static 'services/img/exhibitions/showcase.png' %}" alt="">
-                    </div>
-                    <div class="exhibitions__info">
-                        <h2 class="exhibitions__name">Название Выставки</h2>
-                        <p class="exhibitions__description">Все текстильные компании показывают свои успехи в новых материальных направлениях...</p>
-                        <p class="exhibitions__date"><span>Дата: </span>28.07.2023</p>
-                    </div>
-                </a>
-                <a href="{% url 'exhibitionsAbout' %}" class="exhibitions__item">
-                    <div class="exhibitions__img">
-                        <img class="img " src="{% static 'services/img/exhibitions/uzb-expo.png' %}" alt="">
-                    </div>
-                    <div class="exhibitions__info">
-                        <h2 class="exhibitions__name">Название Выставки</h2>
-                        <p class="exhibitions__description">Все текстильные компании показывают свои успехи в новых материальных направлениях...</p>
-                        <p class="exhibitions__date"><span>Дата: </span>28.07.2023</p>
-                    </div>
-                </a>
-                <a href="{% url 'exhibitionsAbout' %}" class="exhibitions__item">
-                    <div class="exhibitions__img">
-                        <img class="img " src="{% static 'services/img/exhibitions/showcase.png' %}" alt="">
-                    </div>
-                    <div class="exhibitions__info">
-                        <h2 class="exhibitions__name">Название Выставки</h2>
-                        <p class="exhibitions__description">Все текстильные компании показывают свои успехи в новых материальных направлениях...</p>
-                        <p class="exhibitions__date"><span>Дата: </span>28.07.2023</p>
-                    </div>
-                </a>
-                <a href="{% url 'exhibitionsAbout' %}" class="exhibitions__item">
-                    <div class="exhibitions__img">
-                        <img class="img " src="{% static 'services/img/exhibitions/uzb-expo.png' %}" alt="">
-                    </div>
-                    <div class="exhibitions__info">
-                        <h2 class="exhibitions__name">Название Выставки</h2>
-                        <p class="exhibitions__description">Все текстильные компании показывают свои успехи в новых материальных направлениях...</p>
-                        <p class="exhibitions__date"><span>Дата: </span>28.07.2023</p>
-                    </div>
-                </a>
+                {% for exhibition in exhibitions %}
+                    <a href="{% url 'exhibitionsAbout' exhibition.pk %}" class="exhibitions__item">
+                        <div class="exhibitions__img">
+                            <img class="img " src="{{ exhibition.image.url }}" alt="">
+                        </div>
+                        <div class="exhibitions__info">
+                            <h2 class="exhibitions__name">{{ exhibition.name }}</h2>
+                            <p class="exhibitions__description">{{ exhibition.text|truncatechars:150|safe }}</p>
+                            <p class="exhibitions__date"><span>Дата: </span>{{ exhibition.date }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </section>

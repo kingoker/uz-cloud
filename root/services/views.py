@@ -109,7 +109,7 @@ def subsidies(request):
     return render(request, 'services/subsidies/subsidies.html', context)
 
 
-# Страница Сертификатов-список
+# Страница субсидий-список
 def subsidiesAbout(request, pk):
     subsidies = get_object_or_404(Subsidies, pk=pk)
     laws = Law.objects.filter(subsidy=subsidies)
@@ -122,7 +122,7 @@ def subsidiesAbout(request, pk):
     return render(request, 'services/subsidies/listSubsidies.html', context)
 
 
-# Страница Сертификатов
+# Страница субсидий-форма
 def subsidiesForm(request):
 
     context = {
@@ -148,19 +148,22 @@ def subsidiesForm(request):
 # **********************************#
 # Страница Выставок
 def exhibitions(request):
+    exhibitions = Exhibition.objects.filter(published=True).order_by('date')
 
     context = {
-
+        'exhibitions': exhibitions,
     }
 
     return render(request, 'services/exhibitions/exhibitions.html', context)
 
 
+
 # Страница Сертификатов-список
-def exhibitionsAbout(request):
+def exhibitionsAbout(request, pk):
+    exhibitions = get_object_or_404(Exhibition, pk=pk)
 
     context = {
-
+        'exhibitions': exhibitions,
     }
 
     return render(request, 'services/exhibitions/about.html', context)

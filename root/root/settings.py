@@ -127,7 +127,9 @@ LOGOUT_REDIRECT_URL = 'phoneNumbers'
 
 # Указываем путь к директории с статическими файлами
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Папка для поиска статических файлов и папка для сборки
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Папка для сборки статических файлов
+
 
 
 # Указываем путь к директории с загружаемыми фалами
